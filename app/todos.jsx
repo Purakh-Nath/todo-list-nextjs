@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import React from "react";
 import { TodoItem } from "../components/ServerComponents";
-
+import 'tailwindcss/tailwind.css';
 const fetchTodo = async (token) => {
   try {
     const res = await fetch(`${process.env.URL}/api/mytask`, {

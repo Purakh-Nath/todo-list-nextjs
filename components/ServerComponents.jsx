@@ -1,6 +1,6 @@
 import React from "react";
 import { TodoButton } from "./Clients";
-
+import 'tailwindcss/tailwind.css';
 export const TodoItem = ({ title, description, id, completed }) => {
   return (
     <div className="todo">
