@@ -4,14 +4,14 @@ import { TodoItem } from "../components/ServerComponents";
 import 'tailwindcss/tailwind.css';
 const fetchTodo = async (token) => {
   try {
-    const res = await fetch(`/api/mytask`, {
+    const res = await fetch(`https://todo-list-nextjs-ashy.vercel.app/api/mytask`, {
       cache: "no-cache",
       headers: {
         cookie: `token=${token}`,
       },
     });
     const data = await res.json();
-
+    // ${process.env.URL}
     if (!data.success) return [];
 
     return data.tasks;
@@ -24,7 +24,6 @@ const fetchTodo = async (token) => {
 const Todos = async () => {
   const token = cookies().get("token")?.value;
   const tasks = await fetchTodo(token);
- 
   // todosContainer
   return (
     <section className="todosContainer">
