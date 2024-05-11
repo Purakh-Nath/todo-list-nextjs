@@ -4,7 +4,7 @@ import { TodoItem } from "../components/ServerComponents";
 import 'tailwindcss/tailwind.css';
 const fetchTodo = async (token) => {
   try {
-    const res = await fetch(`/api/mytask`, {
+    const res = await fetch(`api/mytask`, {
       cache: "no-cache",
       headers: {
         cookie: `token=${token}`,
