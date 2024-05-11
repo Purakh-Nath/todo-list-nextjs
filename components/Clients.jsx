@@ -5,6 +5,7 @@ import { useState, createContext, useContext, useEffect } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { redirect, useRouter } from "next/navigation";
 import axios from "axios";
+import 'tailwindcss/tailwind.css';
 
 export const Context = createContext({ user: {} });
 export const ContextProvider = ({ children }) => {
