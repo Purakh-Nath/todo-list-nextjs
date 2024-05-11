@@ -4,7 +4,7 @@ import { TodoItem } from "../components/ServerComponents";
 import 'tailwindcss/tailwind.css';
 const fetchTodo = async (token) => {
   try {
-    const res = await fetch(`${process.env.URL}/api/mytask`, {
+    const res = await fetch(`/api/mytask`, {
       cache: "no-cache",
       headers: {
         cookie: `token=${token}`,
@@ -24,7 +24,7 @@ const fetchTodo = async (token) => {
 const Todos = async () => {
   const token = cookies().get("token")?.value;
   const tasks = await fetchTodo(token);
-  console.log(tasks)
+  console.log(to)
   // todosContainer
   return (
     <section className="todosContainer">
